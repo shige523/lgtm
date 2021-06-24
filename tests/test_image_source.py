@@ -1,0 +1,30 @@
+import unittest
+import pathlib
+import os
+from tempfile import TemporaryFile
+
+
+class ImageSourceTest(unittest.TestCase):
+    def setUp(self):
+        # ˆêƒtƒ@ƒCƒ‹‚ğì¬‚·‚é
+        file01 = pathlib.Path("./book.jpeg")
+        file01.touch()
+
+    # def tearDown(self):
+    #     self.tmp.cleanup()
+
+    def test_remote_image(self):
+        from lgtm.image_source import ImageSource, RemoteImage
+
+        self.assertIsInstance(ImageSource("http://test"), RemoteImage)
+        # self.assertIs(type(ImageSource("http://test")), RemoteImage)
+
+    def test_keyword_image(self):
+        from lgtm.image_source import ImageSource, KeywordImage
+
+        self.assertIsInstance(ImageSource("book"), KeywordImage)
+
+    def test_localfile_image(self):
+        from lgtm.image_source import ImageSource, LocalImage
+
+        self.assertIsInstance(ImageSource("./book.jpeg"), LocalImage)

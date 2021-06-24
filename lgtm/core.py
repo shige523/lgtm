@@ -1,5 +1,8 @@
 import click
 
+from lgtm.drawer import save_with_message
+from lgtm.image_source import get_image
+
 # コマンドとして実行したい関数に@click.command
 # 名前を付けたオプションで渡すものは@click.option
 # 位置引数として渡すものは@click.argument
@@ -13,4 +16,5 @@ def cli(keyword, message):
 
 
 def lgtm(keyword, message):
-    pass
+    with get_image(keyword) as fp:
+        save_with_message(fp, message)
