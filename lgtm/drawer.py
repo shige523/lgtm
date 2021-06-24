@@ -7,8 +7,8 @@ MAX_RATIO = 0.8
 FONT_MAX_SIZE = 256
 FONT_MIN_SIZE = 24
 # winの場合はdir C:\windows\fonts\*.*で表示されるフォントファイル名称を使用する
-# FONT_NAME = "arial.ttf"
-FONT_NAME = "/Library/Fonts/Arial Bold.ttf"
+FONT_NAME = "arial.ttf"
+# FONT_NAME = "/Library/Fonts/Arial Bold.ttf"
 FONT_COLOR_WHITE = (255, 255, 255, 0)
 
 # output関連の定数
