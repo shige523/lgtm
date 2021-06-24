@@ -1,4 +1,4 @@
-from setuptools import find_namespace_packages, setup
+from setuptools import find_packages, setup
 
 setup(
     name="lgtm",
