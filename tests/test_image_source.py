@@ -6,12 +6,13 @@ from tempfile import TemporaryFile
 
 class ImageSourceTest(unittest.TestCase):
     def setUp(self):
-        # ˆêƒtƒ@ƒCƒ‹‚ğì¬‚·‚é
-        file01 = pathlib.Path("./book.jpeg")
-        file01.touch()
+        # ä¸€æ™‚ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œæˆã™ã‚‹
+        self.file01 = pathlib.Path("./book.jpeg")
+        self.file01.touch()
 
-    # def tearDown(self):
-    #     self.tmp.cleanup()
+    def tearDown(self):
+
+        self.file01.unlink()
 
     def test_remote_image(self):
         from lgtm.image_source import ImageSource, RemoteImage
